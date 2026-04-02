@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Complex Positioning Layout</title>
+        <style>
+            * {
+                margin: 0px;
+            }
+            body {
+                background-color: rgb(135, 57, 53);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full screen height */
+            }
+            header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                display: flex;
+                background-color: burlywood;
+                /* display: flex; */
+                z-index: 6;
+            }
+            .page-container {
+                display: flex;
+                flex: 1;
+                margin-top: 4rem; /* prevent header overlap */
+            }
+            header ul {
+                display: flex;
+                flex-direction: row-reverse;
+                width: 100%;
+                column-gap: 4rem;
+                margin-left: 29rem;
+                margin-top: 1rem;
+            }
+            .logo {
+                padding-top: 10px;
+            }
+            nav ul {
+                padding-bottom: 10px;
+            }
+            .sticky-sidebar {
+                position: sticky;
+                display: flex;
+                flex-direction: column;
+                left: 5px;
+                top: 4rem;
+                background-color: rgb(250, 178, 102);
+                width: 10%;
+                margin-left: 1rem;
+                height: 10rem;
+            }
+            .sticky-sidebar ul {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                padding-left: 1.5rem;
+                padding-top: 1rem;
+            }
+            li {
+                list-style: none;
+            }
+            .content {
+                background-color: darksalmon;
+                width: 45%;
+                min-height: 100vh;
+                position: relative;
+                margin-left: 8rem;
+            }
+            footer {
+                background-color: antiquewhite;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 6vh;
+                width: 100%;
+            }
+            .box {
+                position: absolute;
+                width: 10rem;
+                height: 10rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            a[href="#"] {
+                text-decoration: none;
+                color: aliceblue;
+            }
+            a[href="#1"] {
+                text-decoration: none;
+                color: rgb(18, 82, 138);
+            }
+            /* body {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              background: #0f0f0f;
+              margin: 0;
+              font-family: Arial, sans-serif;
+            } */
+
+            .hover-underline {
+                font-size: 1rem;
+                color: #ffffff;
+                position: relative;
+                display: inline-block;
+            }
+
+            .hover-underline::after,
+            .hover-underline::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(to right, #ff0000, #00ffff);
+                bottom: -5px;
+                left: 0;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.4s ease-out;
+            }
+
+            .hover-underline::before {
+                top: -5px;
+                transform-origin: left;
+            }
+
+            .hover-underline:hover::after,
+            .hover-underline:hover::before {
+                transform: scaleX(1);
+            }
+            .glow-on-hover {
+                width: 220px;
+                height: 50px;
+                border: none;
+                outline: none;
+                color: #fff;
+                background: #111;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+            }
+
+            .glow-on-hover:before {
+                content: "";
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                border-radius: 10px;
+            }
+
+            .glow-on-hover:active {
+                color: #000;
+            }
+
+            .glow-on-hover:active:after {
+                background: transparent;
+            }
+
+            .glow-on-hover:hover:before {
+                opacity: 1;
+            }
+
+            .glow-on-hover:after {
+                z-index: -1;
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #111;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+            }
+
+            @keyframes glowing {
+                0% {
+                    background-position: 0 0;
+                }
+                50% {
+                    background-position: 400% 0;
+                }
+                100% {
+                    background-position: 0 0;
+                }
+            }
+            /* a[href="#1"]:hover{
+                            background-color: rgb(215, 179, 19);
+                        } */
+
+            .box1 {
+                margin-left: 3rem;
+                margin-top: 3rem;
+            }
+            .box2 {
+                margin-left: 8rem;
+                margin-top: 8rem;
+            }
+            .box3 {
+                margin-left: 13rem;
+                margin-top: 13rem;
+            }
+            .floating-button {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+            }
+            .text {
+                margin-top: 26rem;
+                margin-left: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="fixed-header">
+            <div class="logo" style="font-weight: bold; font-size: 1.5rem; margin-top: 2px; margin-left: 10px; color: aliceblue">Site Logo</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="hover-underline">Home</a></li>
+                    <li><a href="#" class="hover-underline">About</a></li>
+                    <li><a href="#" class="hover-underline">Services</a></li>
+                    <li><a href="#" class="hover-underline">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-container">
+            <aside class="sticky-sidebar">
+                <h2 style="margin-bottom: 2px">Sidebar</h2>
+                <hr color="yellow" />
+                <ul>
+                    <li><a href="#1" class="hover-underline">Link 1</a></li>
+                    <li><a href="#1" class="hover-underline">Link 2</a></li>
+                    <li><a href="#1" class="hover-underline">Link 3</a></li>
+                </ul>
+            </aside>
+
+            <main class="content">
+                <div style="z-index: -1"><h1>Main Content</h1></div>
+
+                <div class="overlapping-section" style="background-color: rgb(67, 197, 87); position: absolute; width: 90%; height: 55%; z-index: 2; left: 2rem">
+                    <!-- Create overlapping elements with z-index -->
+                    <div class="box box1" style="background-color: red">Box 1</div>
+                    <div class="box box2" style="background-color: yellow">Box 2</div>
+                    <div class="box box3" style="background-color: pink">Box 3</div>
+                </div>
+                <div class="text" >
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                    <p>This is additional content to create scrolling.</p>
+                </div>
+            </main>
+        </div>
+
+        <button class="floating-button glow-on-hover">+</button>
+
+        <footer>
+            <p>Footer content</p>
+        </footer>
+    </body>
+</html>

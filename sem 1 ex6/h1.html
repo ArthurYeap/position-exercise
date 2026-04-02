@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(4, 150px);
+                gap: 10px;
+            }
+            .photo {
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .photo1{grid-area: 1/1/3/3;}
+            .photo7{grid-area: 3/2/4/4;}
+            .photo8{grid-area: 4/1/5/4 ;}
+            .photo9{grid-ar}
+        </style>
+    </head>
+    <body>
+        <div class="gallery-grid">
+            <div class="photo photo1" style="background-color: red"><img src="c:\Users\pixel\Downloads\images.jpg" alt="one" /></div>
+            <div class="photo photo2" style="background-color: rgb(255, 153, 0)"><img src="c:\Users\pixel\Downloads\images.jpg" alt="two" /></div>
+            <div class="photo photo3" style="background-color: rgb(204, 255, 0)"><img src="c:\Users\pixel\Downloads\images.jpg" alt="three" /></div>
+            <div class="photo photo4" style="background-color: rgb(64, 255, 0)"><img src="c:\Users\pixel\Downloads\images.jpg" alt="four" /></div>
+            <div class="photo photo5" style="background-color: rgb(2, 124, 55)"><img src="c:\Users\pixel\Downloads\images.jpg" alt="five" /></div>
+            <div class="photo photo6" style="background-color: rgb(11, 34, 245)"><img src="c:\Users\pixel\Downloads\images.jpg" alt="six" /></div>
+            <div class="photo photo7" style="background-color: rgb(234, 0, 255)"><img src="c:\Users\pixel\Downloads\images.jpg" alt="seven" /></div>
+            <div class="photo photo8" style="background-color: rgb(255, 0, 157)"><img src="c:\Users\pixel\Downloads\images.jpg" alt="eight" /></div>
+            <div class="photo photo9" style="background-color: rgb(109, 5, 36)"><img src="c:\Users\pixel\Downloads\images.jpg" alt="nine" /></div>
+        </div>
+    </body>
+</html>
