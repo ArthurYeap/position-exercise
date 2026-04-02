@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Google Fonts Typography Hierarchy</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Milonga&family=Monoton&display=swap" rel="stylesheet" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Italiana&family=Milonga&family=Monoton&display=swap");
+        </style>
+        <style>
+            p {
+                font-size: 3.2rem;
+            }
+
+            p,
+            .pull-quote {
+                font-family: Monoton;
+            }
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-size: 4rem;
+                font-family: Milonga;
+            }
+            .pull-quote,
+            .subtitle {
+                font-size: 1rem;
+            }
+            .pull-quote {
+                /* Float the quote to the left or right */
+                float: left;
+                width: 40%; /* Adjust width as needed */
+                margin: 1em 0 1em 1em; /* Adjust margins to control spacing */
+                padding: 1em;
+                font-family: Italiana !important;
+
+                /* Styling to make it stand out */
+                font-size: 1.5rem;
+                font-style: italic;
+                color: #e81c1c;
+                border-left: 4px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <article>
+            <h1 style="font-weight: 100">Main Article Title</h1>
+            <p class="subtitle">Article subtitle or introduction</p>
+
+            <p>First paragraph of content...</p>
+
+            <h2>First Section Heading</h2>
+            <p>More content...</p>
+
+            <blockquote class="pull-quote">This is an important pull quote from the article</blockquote>
+
+            <h3>Subsection Heading</h3>
+            <p>Additional content...</p>
+
+            <h4>Minor Heading</h4>
+            <p>Final content section...</p>
+        </article>
+    </body>
+</html>
